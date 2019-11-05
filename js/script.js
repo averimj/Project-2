@@ -71,20 +71,15 @@ const appendPageLinks = (listOfStudents) => {
         when that page is clicked the link or <a> tag gets 
         the class "active" while the other class is equal to ""
         */
-        for(let l = 1; l <= allAs.length; l++) {
-            anchorTag.addEventListener("click", (e) => {
-                showPage(listOfStudents,l);
-                const pageClicked = e.target;
-                
-                for (let p = 1; p < allAs.length; p++){
-                    if(pageClicked) {
-                        allAs[p].className = "active";
-                    } else {
-                        allAs[p].className = "";
-                    }                
-                }  
-            })        
+       ul.addEventListener("click", (e) => {
+        const allAs = ul.querySelectorAll("a");
+        for (let p = 0; p < allAs.length; p++){
+            allAs[p].className = "";
         }
+        const pageClicked = e.target;
+        pageClicked.className = "active";
+        showPage(listOfStudents,pageClicked.innerText);
+        })        
     }   
 }
     appendPageLinks(students);
