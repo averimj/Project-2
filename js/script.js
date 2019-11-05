@@ -71,6 +71,10 @@ const appendPageLinks = (listOfStudents) => {
         when that page is clicked the link or <a> tag gets 
         the class "active" while the other class is equal to ""
         */
+
+        /*  i credit @julian and @allie for their help
+            with this portion of the function
+        */
        ul.addEventListener("click", (e) => {
         const allAs = ul.querySelectorAll("a");
         for (let p = 0; p < allAs.length; p++){
